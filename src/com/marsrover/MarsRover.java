@@ -41,5 +41,7 @@ public class MarsRover {
     public void changeDirection(String input) {
         if ( input.equals("L") && direction.equals("E"))
             direction = "N";
+        else if (input.equals("R") && direction.equals("E"))
+            direction = "S";
     }
 }
