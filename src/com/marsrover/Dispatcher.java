@@ -13,10 +13,11 @@ public class Dispatcher {
     public void forwardInputsToRover() {
         for (int i = 0; i < inputsForMoving.length(); i++) {
             String input = String.valueOf(inputsForMoving.charAt(i));
-
             if (input.equals("M"))
                 marsRover.moveRover();
-
+            else {
+                marsRover.changeDirection(input);
+            }
         }
     }
 }
