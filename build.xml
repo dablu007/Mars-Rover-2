@@ -4,6 +4,7 @@
         <javac srcdir="src;test" includeantruntime="true" destdir="antBuild">
             <classpath location="lib/hamcrest-core-1.3.jar"/>
             <classpath location="lib/junit-4.11.jar"/>
+            <classpath location="lib/mockito-all-1.9.5.jar" path="antBuild"/>
         </javac>
     </target>
 
@@ -11,8 +12,24 @@
         <junit haltonerror="true" haltonfailure="true" printsummary="true">
             <classpath location="lib/hamcrest-core-1.3.jar" path="antBuild"/>
             <classpath location="lib/junit-4.11.jar" path="antBuild"/>
+            <classpath location="lib/mockito-all-1.9.5.jar" path="antBuild"/>
             <test name="com.marsrover.MarsRoverTest" haltonfailure="true" haltonerror="true"/>
+            <test name="com.marsrover.DispatcherTest" haltonfailure="true" haltonerror="true"/>
 
         </junit>
+    </target>
+    <target name ="createJar" depends="compile">
+        <jar destfile="lib/app.jar"
+             basedir="antBuild"
+             excludes="**/Test.class"/>
+    </target>
+
+    <target name="run" depends="createJar">
+        <java classname="com.marsrover.Main">
+            <classpath>
+                <pathelement location="lib/app.jar"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </java>
     </target>
 </project>
