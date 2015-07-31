@@ -1,7 +1,7 @@
 package com.marsrover;
 
 
-public class ViewFinalPositions {
+public class ViewFinalPositions implements IView{
     private MarsRover marsRover;
 
     public ViewFinalPositions(MarsRover marsRover) {
