@@ -31,4 +31,12 @@ public class MarsRoverTest {
         marsRover.moveRover("E");
         assertEquals(2, marsRover.getPositionX());
     }
+
+    @Test
+    public void shouldChangePositionOfRoverWhenDirectionIsWest() {
+        MarsRover marsRover = new MarsRover(1,1,"W",5,5);
+
+        marsRover.moveRover("W");
+        assertEquals(0, marsRover.getPositionX());
+    }
 }

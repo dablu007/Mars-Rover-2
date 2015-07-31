@@ -34,5 +34,7 @@ public class MarsRover {
             positionY -= 1;
         else if (inputDirection.equals("E"))
             positionX += 1;
+        else if (inputDirection.equals("W"))
+            positionX -= 1;
     }
 }
