@@ -28,6 +28,9 @@ public class MarsRover {
     }
 
     public void moveRover(String inputDirection) {
-        positionX += 1;
+        if (inputDirection.equals("N"))
+            positionY += 1;
+        else if (inputDirection.equals("S"))
+            positionY -= 1;
     }
 }

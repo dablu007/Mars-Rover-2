@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class MarsRoverTest {
 
     @Test
@@ -12,7 +13,14 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(1,1,"N",5,5);
 
         marsRover.moveRover("N");
+        assertEquals(2, marsRover.getPositionY());
+    }
 
-        Assert.assertEquals(2, marsRover.getPositionX());
+    @Test
+    public void shouldChangePositionOfRoverWhenDirectionIsSouth() {
+        MarsRover marsRover = new MarsRover(1,1,"S",5,5);
+
+        marsRover.moveRover("S");
+        assertEquals(0, marsRover.getPositionY());
     }
 }
