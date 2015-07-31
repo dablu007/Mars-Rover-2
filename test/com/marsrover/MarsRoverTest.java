@@ -54,4 +54,12 @@ public class MarsRoverTest {
         marsRover.changeDirection("R");
         assertEquals("S", marsRover.getDirection());
     }
+
+    @Test
+    public void shouldChangeDirectionToEastWhenDirectionWasNorthAndInputWasRight() {
+        MarsRover marsRover = new MarsRover(1,1,"N",5,5);
+
+        marsRover.changeDirection("R");
+        assertEquals("E", marsRover.getDirection());
+    }
 }
