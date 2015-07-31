@@ -38,4 +38,12 @@ public class MarsRoverTest {
         marsRover.moveRover();
         assertEquals(0, marsRover.getPositionX());
     }
+
+    @Test
+    public void shouldChangeDirectionToNorthWhenDirectionWasEastAndInputWasLeft() {
+        MarsRover marsRover = new MarsRover(1,1,"E",5,5);
+
+        marsRover.changeDirection("L");
+        assertEquals("N", marsRover.getDirection());
+    }
 }
