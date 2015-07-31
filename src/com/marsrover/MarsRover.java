@@ -27,14 +27,14 @@ public class MarsRover {
         return direction;
     }
 
-    public void moveRover(String inputDirection) {
-        if (inputDirection.equals("N"))
+    public void moveRover() {
+        if (direction.equals("N"))
             positionY += 1;
-        else if (inputDirection.equals("S"))
+        else if (direction.equals("S"))
             positionY -= 1;
-        else if (inputDirection.equals("E"))
+        else if (direction.equals("E"))
             positionX += 1;
-        else if (inputDirection.equals("W"))
+        else if (direction.equals("W"))
             positionX -= 1;
     }
 }
